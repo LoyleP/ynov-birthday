@@ -1,0 +1,38 @@
+export const fr = {
+  appName: "Anniversaires étudiants",
+  nav: { birthdays: "Anniversaires", recipients: "Destinataires" },
+  birthdays: {
+    title: "Anniversaires à venir",
+    intro: "Chaque matin, chaque destinataire reçoit les anniversaires du jour pour ses domaines.",
+    today: "Aujourd'hui",
+    next: "30 prochains jours",
+    none: "Aucun anniversaire.",
+    emptyTitle: "Aucun étudiant importé",
+    emptyBody: "Importez l'export Excel pour afficher les anniversaires.",
+    turns: (age: number) => `${age} ans`,
+    students: (n: number) => `${n} étudiant${n > 1 ? "s" : ""} importé${n > 1 ? "s" : ""}`,
+  },
+  import: {
+    title: "Importer l'export Excel",
+    hint: "Colonnes lues : Nom, Prénom, Date de naissance, Programme, Domaine. Remplace la liste actuelle.",
+    button: "Importer",
+    done: (n: number) => `${n} étudiants importés`,
+    error: "Fichier illisible ou colonnes manquantes",
+  },
+  recipients: {
+    title: "Destinataires",
+    intro: "Chaque personne reçoit uniquement les étudiants des domaines cochés.",
+    name: "Nom",
+    email: "Email",
+    domains: "Domaines",
+    add: "Ajouter",
+    remove: "Supprimer",
+    none: "Aucun destinataire",
+    noneBody: "Ajoutez une personne pour commencer les envois.",
+    noDomains: "Importez d'abord les étudiants pour choisir des domaines.",
+  },
+  mail: {
+    subject: (n: number) => `Anniversaire${n > 1 ? "s" : ""} du jour (${n})`,
+    intro: "Aujourd'hui, c'est l'anniversaire de :",
+  },
+};
