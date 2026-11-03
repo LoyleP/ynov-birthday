@@ -1,6 +1,8 @@
 import * as XLSX from "xlsx";
 import type { Student } from "./store";
 
+const DOMAINES: Record<string, string> = { "Tech & Business": "Product" };
+
 const pad = (n: number) => String(n).padStart(2, "0");
 
 function toIso(v: unknown): string | null {
@@ -23,7 +25,7 @@ export function parseWorkbook(buf: ArrayBuffer): Student[] {
       prenom: String(r["Prénom"] ?? "").trim(),
       naissance,
       programme: String(r["2026 - Programme"] ?? "").trim(),
-      domaine: String(r["2026 - Domaine"] ?? "").trim(),
+      domaine: DOMAINES[String(r["2026 - Domaine"] ?? "").trim()] ?? String(r["2026 - Domaine"] ?? "").trim(),
     });
   }
   return students;
